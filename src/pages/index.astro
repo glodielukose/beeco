@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Step from '../components/Step.tsx';
+
+const tabLinks = [
+	{name: "home", href:"/"},
+	{name: "how it works", href:"/"},
+	{name: "unicef talks", href:"/"},
+	{name: "statistics", href:"/"},
+	{name: "conference", href:"/"},
+	{name: "benefits", href:"/"},
+	{name: "FAQ", href:"/"},
+	{name: "contact", href:"/"},
+]
+---
+
+
+
+<Layout title="Welcome to Astro.">
+	<main class="mx-auto p-10">
+		<section class="border-2 w-full rounded-2xl bg-white px-10">
+			<header class="flex justify-between items-center border-b-2">
+				<div class="py-5">
+					<img 
+						src="/beeco4.svg" 
+						alt="beeco logo"
+					>
+				</div>
+				
+				<nav>
+					<ul class="flex justify-between items-center font-medium">
+						{tabLinks.map((link) => {
+							return (
+								<li class="p-5 capitalize">
+									<a href={link.href}>{link.name}</a>
+								</li>
+							)
+						})}
+					</ul>
+				</nav>
+			</header>
+
+			<div>
+				<div class="flex pt-20">
+					<div class="flex flex-col w-1/2">
+						<p class="border-2 border-outline text-lg font-semibold self-start rounded-3xl py-2 px-3">Be Eco!</p>
+
+						<h2 class="text-5xl font-semibold mt-10" >
+							<span>Save the earth!</span>
+							<br>
+							<span class="text-green">Plant a tree!</span>
+						</h2>
+
+						<p class="text-xl font-semibold mt-10">The United Nations designated 5 June as World Environment Day to highlight that the protection and health of the environment</p>
+
+						<div class="mt-10">
+							<button class="self-start bg-orange hover:bg-slate-orange transition-all text-white font-semibold px-8 py-4 rounded-3xl">How can I help</button>
+						</div>
+					</div>
+
+					<div class="w-1/2">
+						<div class="w-full">
+							<img 
+								src="/beeco4-home-pic1.svg" 
+								alt="hero-image"
+								class="w-full h-full object-cover"
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="flex">
+					<div class="border-r-2 border-outline pr-10 pb-10">
+						<h3 class="text-xl font-semibold ">100990874</h3>
+						<p class="pt-3 text-lg">Pellentesque aliquet</p>
+					</div>
+
+					<div class="pl-10 pb-10">
+						<h3 class="text-xl font-semibold ">100990874</h3>
+						<p class="pt-3 text-lg">Pellentesque aliquet</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Step 
+			client:load
+			image="/hiw-image/beeco4-howitworks-pic1.svg"
+			title='The idea was first. After that you need '
+			greenTitle='knowledge how to do what you want.'
+			paragraph="Mattis pellentesque semper imperdiet etiam senectus sit curabitur in donec nunc suspendisse interdum aliquet vitae auctor varius neque est consectetur erat curabitur erat in augue."
+			position='right'
+			step="01"
+		/>
+
+		<div class="flex justify-center items-center my-20">
+			<div class="border w-32"></div>
+		</div>
+
+		<Step 
+			client:load
+			image="/hiw-image/beeco4-howitworks-pic2.svg"
+			title="Success didn't come out of nowhere "
+			greenTitle='the key was hard and systematic work'
+			paragraph="Massa eget consectetur faucibus aliquam. Integer urna vitae iaculis at nullam gravida nisl tellus. Sollicitudin dolor etiam pulvinar semper non scelerisque."
+			position='left'
+			step="02"
+		/>
+
+		<div class="flex justify-center items-center my-20">
+			<div class="border w-32"></div>
+		</div>
+
+		<Step
+			client:load 
+			image="/hiw-image/beeco4-howitworks-pic3.svg"
+			title='Taking care of what you do is just as important '
+			greenTitle='as everything else'
+			paragraph="Interdum augue etiam aliquet tristique proin leo rutrum est laoreet nullam vehicula facilisis hac curae massa dui fames aliquam nullam habitant eleifend curabitur ultrices ipsum."
+			position='right'
+			step="03"
+		/>
+
+		<div class="flex justify-center items-center my-20">
+			<div class="border w-32"></div>
+		</div>
+
+		<Step 
+			image="/hiw-image/beeco4-howitworks-pic4.svg"
+			title='Thanks to your actions, '
+			greenTitle='everyone will win in the end.'
+			paragraph="Fringilla nec odio pellentesque condimentum senectus aliquet sociosqu fames cubilia nostra risus pellentesque nisi platea ad nullam amet curabitur maecenas class aenean."
+			position='left'
+			step="04"
+			client:load
+		/>
+	</main>
+</Layout>
